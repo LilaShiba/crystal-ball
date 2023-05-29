@@ -2,4 +2,4 @@ flask
 gunicorn
 crystal_ball
 transformers
-tensorflow-lite
+tensorflow-cpu
