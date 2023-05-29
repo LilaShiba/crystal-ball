@@ -1,0 +1,15 @@
+*.DS_Store
+*dpr
+*HCI
+*dev
+*jiji
+*.venv
+
+# Ignore virtual environment
+venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

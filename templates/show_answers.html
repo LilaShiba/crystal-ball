@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Answers</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Top 3 likely answers:</h1>
+    {% for answer in answers %}
+        <p>
+        <strong>Answer:</strong> {{ answer['answer'] }}<br>
+        <strong>Score:</strong> {{ answer['score'] }}
+        </p>
+    {% endfor %}
+    <a href="/ask_again">Ask another question</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crystal Ball</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Ask your question</h1>
+    <form action="/ask" method="post">
+        <label for="document">Document:</label><br>
+        <textarea id="document" name="document"></textarea><br>
+        <label for="question">Question:</label><br>
+        <input type="text" id="question" name="question"><br>
+        <label for="doc_type">Document Type:</label><br>
+        <input type="text" id="doc_type" name="doc_type" placeholder="txt"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

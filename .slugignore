@@ -1,0 +1,51 @@
+# Ignore development and test files
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+
+# Ignore version control files and directories
+.git/
+.gitignore
+.hg/
+.hgignore
+.svn/
+.bzr/
+
+# Ignore editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore virtual environment
+.venv/
+venv/
+env/
+
+# Ignore logs and temporary files
+logs/
+temp/
+*.log
+*.tmp
+
+# Ignore media and static files
+media/
+static/
+
+# Ignore database files
+db.sqlite3
+*.db
+
+# Ignore compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore any other files or directories specific to your project
+
+*.DS_Store
+*HCI
+*dev
+*dpr
+*jiji

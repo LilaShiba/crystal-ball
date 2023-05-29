@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask a Question</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Ask your question</h1>
+        <form action="/ask" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="document" class="form-label">Document:</label>
+                <input type="file" id="document" name="document" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="question" class="form-label">Question:</label>
+                <input type="text" id="question" name="question" class="form-control" required>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/js/bootstrap.min.js"></script>
+</body>
+</html>
