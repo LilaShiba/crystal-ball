@@ -2,3 +2,4 @@ flask
 gunicorn
 crystal_ball
 transformers
+tensorflow
