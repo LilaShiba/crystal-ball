@@ -4,21 +4,23 @@
 
 {% block content %}
 <div class="container">
-    <h1>Ask your question</h1>
+    <h1 class="text-center mb-5">Ask your question</h1>
     <form action="/ask" method="post">
-        <div class="mb-3">
-            <label for="document" class="form-label">Document:</label>
-            <textarea id="document" name="document" class="form-control"></textarea>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="document" class="form-label">Document:</label>
+                    <textarea id="document" name="document" class="form-control" rows="6" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="question" class="form-label">Question:</label>
+                    <input type="text" id="question" name="question" class="form-control" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="question" class="form-label">Question:</label>
-            <input type="text" id="question" name="question" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="doc_type" class="form-label">Document Type:</label>
-            <input type="text" id="doc_type" name="doc_type" class="form-control" placeholder="txt">
-        </div>
-        <input type="submit" value="Submit" class="btn btn-primary">
     </form>
 </div>
 {% endblock %}
