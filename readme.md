@@ -13,7 +13,6 @@ source myenv/bin/activate
 Install the required dependencies:
 
 ```shell
-Copy code
 pip3 install -r requirements.txt
 ```
 
@@ -47,8 +46,3 @@ for answer in answers:
 ```
 
 May the magic of CrystalBall guide you on your quest for knowledge and insights! ✨🔮🌙
-
-
-
-
-
