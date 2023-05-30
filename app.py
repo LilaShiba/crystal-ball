@@ -10,7 +10,6 @@ def home():
 @app.route('/ask', methods=['GET', 'POST'])
 def ask():
     if request.method == 'POST':
-        
         crystal_ball = CrystalBall()
 
         document = request.form['document']
@@ -33,3 +32,4 @@ def ask_again():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

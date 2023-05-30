@@ -1,16 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Crystal Ball Home</title>
+    <title>CrystalBall</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
+    <h1>🧙‍♀️🔮 CrystalBall 🌙✨</h1>
+    <img src="api/imgs/jij.png" alt="CrystalBall Image">
+
+    <p>Welcome to the magical CrystalBall! This Python class allows you to harness the power of divination and answer questions using the HuggingFaces NLP (Natural Language Processing) LLM (Large Language Models)</p>
+
     <div class="container">
-        <h1 class="title">Welcome to Crystal Ball</h1>
-        <p class="subtitle">Ask your questions and get mystical answers</p>
-        <a class="cta-button btn btn-primary" href="/ask">Go to Form</a>
+        <a class="btn btn-info" href="/ask">Go to Form</a>
     </div>
+    <h2>Overview 🌟</h2>
+
+    <p>CrystalBall is a versatile tool that utilizes the incredible capabilities of Hugging Face's Transformers library for question-answering tasks. With CrystalBall, you can unlock the secrets hidden within your documents and obtain answers to your burning questions.</p>
+
+    <h2>Installation 🧪🔬</h2>
+
+    <p>To activate the enchanting powers of CrystalBall, follow these steps:</p>
+
+    <ol>
+        <li>Create and activate a virtual environment:</li>
+        <pre><code>python3 -m venv myenv
+source myenv/bin/activate</code></pre>
+
+        <li>Install the required dependencies:</li>
+        <pre><code>pip3 install -r requirements.txt</code></pre>
+    </ol>
+
+    <h2>Usage 🌟</h2>
+
+    <p>To explore the mystical powers of CrystalBall, embark on a journey of question-answering with the following steps:</p>
+
+    <ol>
+        <li>Prepare your document:</li>
+        <ul>
+            <li>Ensure your document is in the desired format (e.g., text or Markdown).</li>
+            <li>Place your document in a suitable location.</li>
+        </ul>
+
+        <li>Seek answers from CrystalBall:</li>
+        <ul>
+            <li>Create an instance of the CrystalBall class in your Python script.</li>
+            <li>Use the <code>read_document()</code> method to provide CrystalBall with the path to your document.</li>
+            <li>Invoke the <code>answer_question()</code> method with your question of interest.</li>
+            <li>Marvel at the wisdom and insights revealed by CrystalBall.</li>
+        </ul>
+    </ol>
+
+    <p>Here's an example to get you started:</p>
+
+    <pre><code>from transformers import pipeline
+import re
+
+class CrystalBall:
+    # ...
+
+# Example usage
+if __name__ == "__main__":
+    file_path = '/path/to/document.md'
+    question = "What is the main topic of the document?"
+
+    crystal_ball = CrystalBall()
+    crystal_ball.read_document(file_path, doc_type='md')
+
+    answers = crystal_ball.answer_question(question)
+
+    print("Top 3 likely answers:")
+    for answer in answers:
+        print("Answer:", answer['answer'])
+        print("Score:", answer['score'])
+        print()
+</code></pre>
+
+    <p>May the magic of CrystalBall guide you on your quest for knowledge and insights! ✨🔮🌙</p>
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
