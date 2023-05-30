@@ -3,16 +3,49 @@
 <head>
     <title>Answers</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            padding: 30px;
+            background-color: #1f1f1f;
+            color: #fff;
+        }
 
+        h1 {
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .btn-info {
+            background-color: #148f77;
+            border-color: #148f77;
+        }
+
+        .btn-info:hover {
+            background-color: #11715f;
+            border-color: #11715f;
+        }
+    </style>
 </head>
 <body>
-    <h1>Top 3 likely answers:</h1>
+    <img src="static/imgs/jiji.png" alt="CrystalBall Image">
     {% for answer in answers %}
+        <h2>🔮</h2>
         <p>
         <strong>Answer:</strong> {{ answer['answer'] }}<br>
         <strong>Score:</strong> {{ answer['score'] }}
         </p>
     {% endfor %}
-    <a href="/ask_again">Ask another question</a>
+    <a href="/ask_again" class="btn btn-primary">Ask another question</a>
 </body>
 </html>

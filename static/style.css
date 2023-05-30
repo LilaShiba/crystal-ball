@@ -1,25 +1,26 @@
 body {
-  font-family: 'Roboto Mono', monospace;
-  background-color: #2c3e50;
+  font-family: 'Fira Code', monospace;
+  background-color: #1f1f1f;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
 }
 
-.jumbotron {
-  background-color: #1abc9c;
-  color: #fff;
-  padding: 2rem;
-  margin-bottom: 0;
-}
-
-.content {
-  margin-top: 3rem;
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #343a40;
+  border-radius: 10px;
 }
 
 .form-control {
-  background-color: #34495e;
+  background-color: #2c3036;
   color: #fff;
-  border-color: #34495e;
+  border-color: #2c3036;
 }
 
 .btn-primary {
