@@ -1,52 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>🧪🔬CrystalBall🧪🔬</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/css/bootstrap.min.css">
-    <style>
-        body {
-            text-align: center;
-            font-family: 'Roboto Mono', monospace;
-            padding: 30px;
-            background-color: #1f1f1f;
-            color: #fff;
-        }
+{% extends 'base.html' %}
 
-        h1 {
-            margin-bottom: 30px;
-            color: #fff;
-        }
+{% block title %}🧪🔬CrystalBall🧪🔬{% endblock %}
 
-        img {
-            max-width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            margin-top: 30px;
-        }
-
-        .btn-info {
-            background-color: #148f77;
-            border-color: #148f77;
-        }
-
-        .btn-info:hover {
-            background-color: #11715f;
-            border-color: #11715f;
-        }
-    </style>
-</head>
-<body>
+{% block content %}
     <h1>🧙‍♀️🔮 CrystalBall 🌙✨</h1>
-    <img src="static/imgs/jiji.png" alt="CrystalBall Image">
 
     <h2>🌟</h2>
 
     <p>CrystalBall is a versatile tool that utilizes the incredible capabilities of Hugging Face's Transformers library for question-answering tasks. With CrystalBall, you can unlock the secrets hidden within your documents and obtain answers to your burning questions.</p>
 
     <div class="container">
-        <a class="btn btn-info" href="/ask">Go to Form</a>
+        <a class="btn btn-info" href="{{ url_for('ask') }}">Go to Form</a>
     </div>
-</body>
-</html>
+{% endblock %}

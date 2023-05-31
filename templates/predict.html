@@ -3,50 +3,28 @@
 {% block title %}Ask a Question{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>🧪🔬Deep Space🧪🔬</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/css/bootstrap.min.css">
-    <style>
-        body {
-            text-align: center;
-            font-family: 'Roboto Mono', monospace;
-            padding: 30px;
-            background-color: #1f1f1f;
-            color: #fff;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-            color: #fff;
-        }
-
-        img {
-            max-width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            margin-top: 30px;
-        }
-
-        .btn-info {
-            background-color: #148f77;
-            border-color: #148f77;
-        }
-
-        .btn-info:hover {
-            background-color: #11715f;
-            border-color: #11715f;
-        }
         
-        .form-control {
-            background-color: #1f1f1f;
-            color: #fff;
-            border: 1px solid #fff;
-        }
-    </style>
+    <form action="{{ url_for('ask') }}" method="post">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="document" class="form-label">&#x1F4D3; Document:</label><br>
+                    <textarea id="document" name="document" class="form-control" rows="6" required></textarea><br>
+                </div>
+                <div class="mb-3">
+                    <label for="question" class="form-label">&#x2753; Question:</label><br>
+                    <input type="text" id="question" name="question" class="form-control" required><br>
+                </div>
+                <div class="mb-3">
+                    <label for="doc_type" class="form-label">Document Type:</label><br>
+                    <input type="text" id="doc_type" name="doc_type" class="form-control" placeholder="txt"><br><br>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info">Submit</button><br><br>
+                </div>
+            </div>
+        </div>
+    </form>
 
     <script>
     window.onload = function() {
@@ -72,32 +50,4 @@
         });
     };
     </script>
-</head>
-<body>
-    <img src="static/imgs/jiji.png" alt="CrystalBall Image">
-        
-    <form action="/ask" method="post">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="mb-3">
-                    <label for="document" class="form-label">&#x1F4D3; Document:</label><br>
-                    <textarea id="document" name="document" class="form-control" rows="6" required></textarea><br>
-                </div>
-                <div class="mb-3">
-                    <label for="question" class="form-label">&#x2753; Question:</label><br>
-                    <input type="text" id="question" name="question" class="form-control" required><br>
-                </div>
-                <div class="mb-3">
-                    <label for="doc_type" class="form-label">Document Type:</label><br>
-                    <input type="text" id="doc_type" name="doc_type" class="form-control" placeholder="txt"><br><br>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-info">Submit</button><br><br>
-                </div>
-            </div>
-        </div>
-    </form>
-
 {% endblock %}
-</body>
-</html>
