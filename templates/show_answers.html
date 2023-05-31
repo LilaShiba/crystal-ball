@@ -1,44 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Answers</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        body {
-            text-align: center;
-            font-family: 'Roboto Mono', monospace;
-            padding: 30px;
-            background-color: #1f1f1f;
-            color: #fff;
-        }
+{% extends 'base.html' %}
 
-        h1 {
-            margin-bottom: 30px;
-            color: #fff;
-        }
+{% block title %}Answers{% endblock %}
 
-        img {
-            max-width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            margin-top: 30px;
-        }
-
-        .btn-info {
-            background-color: #148f77;
-            border-color: #148f77;
-        }
-
-        .btn-info:hover {
-            background-color: #11715f;
-            border-color: #11715f;
-        }
-    </style>
-</head>
-<body>
-    <img src="static/imgs/jiji.png" alt="CrystalBall Image">
+{% block content %}
+    <img src="{{ url_for('static', filename='imgs/jiji.png') }}" alt="CrystalBall Image">
     {% for answer in answers %}
         <h2>🔮</h2>
         <p>
@@ -46,6 +11,7 @@
         <strong>Score:</strong> {{ answer['score'] }}
         </p>
     {% endfor %}
-    <a href="/ask_again" class="btn btn-primary">Ask another question</a>
-</body>
-</html>
+    <form action="/ask" method="get">
+        <button type="submit" class="btn btn-primary">Ask another question</button>
+    </form>
+{% endblock %}

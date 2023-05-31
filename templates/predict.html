@@ -47,29 +47,57 @@
             border: 1px solid #fff;
         }
     </style>
+
+    <script>
+    window.onload = function() {
+        var documentField = document.getElementById('document');
+        var docTypeField = document.getElementById('doc_type');
+
+        // Get the document and doc_type from localStorage
+        var savedDocument = localStorage.getItem('document');
+        var savedDocType = localStorage.getItem('doc_type');
+
+        // If a document and doc_type were saved, pre-fill the fields
+        if (savedDocument) {
+            documentField.value = savedDocument;
+        }
+        if (savedDocType) {
+            docTypeField.value = savedDocType;
+        }
+
+        // When the form is submitted, save the document and doc_type in localStorage
+        document.querySelector('form').addEventListener('submit', function() {
+            localStorage.setItem('document', documentField.value);
+            localStorage.setItem('doc_type', docTypeField.value);
+        });
+    };
+    </script>
 </head>
 <body>
     <img src="static/imgs/jiji.png" alt="CrystalBall Image">
         
-            <form action="/ask" method="post">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <label for="document" class="form-label">&#x1F4D3; Document:</label><br>
-                            <textarea id="document" name="document" class="form-control" rows="6" required></textarea><br>
-                        </div>
-                        <div class="mb-3">
-                            <label for="question" class="form-label">&#x2753; Question:</label><br>
-                            <input type="text" id="question" name="question" class="form-control" required><br>
-                        </div>
-                        <div class="mb-3">
-                            <label for="doc_type" class="form-label">Document Type:</label><br>
-                            <input type="text" id="doc_type" name="doc_type" class="form-control" placeholder="txt"><br><br>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-info">Submit</button><br><br>
-                        </div>
-                    </div>
+    <form action="/ask" method="post">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="document" class="form-label">&#x1F4D3; Document:</label><br>
+                    <textarea id="document" name="document" class="form-control" rows="6" required></textarea><br>
                 </div>
-            </form>
-    {% endblock %}
+                <div class="mb-3">
+                    <label for="question" class="form-label">&#x2753; Question:</label><br>
+                    <input type="text" id="question" name="question" class="form-control" required><br>
+                </div>
+                <div class="mb-3">
+                    <label for="doc_type" class="form-label">Document Type:</label><br>
+                    <input type="text" id="doc_type" name="doc_type" class="form-control" placeholder="txt"><br><br>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info">Submit</button><br><br>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+</body>
+</html>

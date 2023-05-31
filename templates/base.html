@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Crystal Ball{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}🔮{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.7.2/css/bootstrap.min.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            padding: 30px;
+            background-color: #1f1f1f;
+            color: #fff;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .btn-info {
+            background-color: #148f77;
+            border-color: #148f77;
+        }
+
+        .btn-info:hover {
+            background-color: #11715f;
+            border-color: #11715f;
+        }
+        
+        .form-control {
+            background-color: #1f1f1f;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+    </style>
 </head>
 <body>
-
-
     <div class="container-fluid content">
         {% block content %}{% endblock %}
     </div>
