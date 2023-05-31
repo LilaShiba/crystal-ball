@@ -1,11 +1,19 @@
 from flask import Flask, request, render_template, redirect, url_for, session
 from crystal_ball import CrystalBall
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__, static_folder='static')
 
 app.config['SECRET_KEY'] = 'your-secret-key'  # For session
 
 crystal_ball = None
+
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'docx', 'md'])
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/')
 def home():
@@ -16,7 +24,16 @@ def ask():
     global crystal_ball
 
     if request.method == 'POST':
-        document = request.form['document']
+        # get the file from the request
+        file = request.files['document']
+
+        # if a file is selected, read the file content into document
+        if file.filename != '' and file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            document = file.read().decode('utf-8')
+        else:  # if no file is selected, use the old method
+            document = request.form['document']
+        
         question = request.form['question']
         doc_type = request.form.get('doc_type', 'txt')  # Default doc_type to 'txt' if not provided
 
@@ -34,9 +51,8 @@ def ask():
     else:
         return render_template('predict.html')
 
-@app.route('/ask_again')
-def ask_again():
-    return redirect(url_for('ask'))
+# any other routes
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
