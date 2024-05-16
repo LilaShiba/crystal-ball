@@ -1,4 +1,6 @@
 # 🧙‍♀️🔮 CrystalBall 🌙✨
+[🏹🦊🌳](https://drive.google.com/file/d/1gcFXBOl8DrdIpi9OSPMYztMWRxu9gxHe/view?usp=drivesdk)
+
 
 CrystalBall combines the power of divination and question-answering using Hugging Face's NLP (Natural Language Processing) LLM (Large Language Models). Unlock the secrets hidden within your documents and receive answers to your questions using the wisdom of CrystalBall.
 
